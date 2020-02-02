@@ -1,17 +1,15 @@
 def get_input(number):
     lines = []
-    while True:
+    for i in range(number):
         line = input()
-        if line:
-            lines.append(line)
-        else:
-            break
-    print(lines)
+        lines.append(line)
+    return(lines)
 
 
 def main():
-    number = input()
-    get_input(number)
+    number = int(input())
+    name = get_input(number)
+    print(name)
 
 if (__name__ == "__main__"):
     main()
