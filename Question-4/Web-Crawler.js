@@ -1,7 +1,7 @@
-const axios = require('axios')
-const cheerio = require('cheerio')
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-const url = 'https://theinternship.io'
+const url = 'https://theinternship.io';
 
 axios(url)
     .then(response => {
@@ -10,10 +10,10 @@ axios(url)
         const link = [];
 
         $('div.partner').each(function () {
-            const src = $(this).find('a > img').attr('src');
+            const logo = $(this).find('a > img').attr('src');
             const text = $(this).find('span').text();
             link.push({
-                src,
+                logo,
                 text,
             });
         });
@@ -23,7 +23,7 @@ axios(url)
         });
         //console.log(link)
         for(var company in byText) {
-            console.log(byText[company].src);
+            console.log(byText[company].logo);
         }
     })
     .catch(console.error);
