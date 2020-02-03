@@ -17,7 +17,13 @@ axios(url)
                 text,
             });
         });
-
-        console.log(link);
+        var byText = link.slice(0);
+        byText.sort(function(a,b) {
+            return a.text.length - b.text.length;
+        });
+        //console.log(link)
+        for(var company in byText) {
+            console.log(byText[company].src);
+        }
     })
     .catch(console.error);
