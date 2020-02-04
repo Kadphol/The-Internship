@@ -5,7 +5,7 @@ def calculate(question, guess, result, score):
         for c in question:
             if(guess == c):
                 result[i] = c #show correct guess
-                correct += 1 #add score
+                correct += 1 #collect score
             i += 1
     else:
         result.append(guess) #append incorrect guess
