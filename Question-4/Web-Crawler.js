@@ -1,29 +1,10 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
+var crawler = require('../Question-4/Crawler'); //import crawler module
 
-const url = 'https://theinternship.io';
-
-axios(url)
-    .then(response => {
-        const html = response.data;
-        const $ = cheerio.load(html);
-        const link = [];
-
-        $('div.partner').each(function () {
-            const logo = $(this).find('a > img').attr('src');
-            const text = $(this).find('span').text();
-            link.push({
-                logo,
-                text,
-            });
-        });
-        var byText = link.slice(0);
-        byText.sort(function(a,b) {
-            return a.text.length - b.text.length;
-        });
-        //console.log(link)
-        for(var company in byText) {
-            console.log(byText[company].logo);
-        }
-    })
-    .catch(console.error);
+crawler().then(function(result) { //capture result of promise
+    result.sort(function(a,b) { //sort by description length
+        return a.text.length - b.text.length;
+    });
+    for(var i in result) { //print logo url
+        console.log(result[i].logo)
+    }
+})
