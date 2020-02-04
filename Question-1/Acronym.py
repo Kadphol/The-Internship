@@ -1,12 +1,4 @@
-"""
-Sorting Acronyms
-Input:  the first line contain integer N, the number of name input.
-        the next N line contain string of name.
-Output: Print the acronyms in each line with sorting by longest to shortest.
-        if there are the same length, sorted by alphabetical order.
-"""
-
-def get_upper(name):
+def get_upper(name): #get acronym of name
     word = []
     upper = ""
     word = name.split()
@@ -15,7 +7,7 @@ def get_upper(name):
             upper+=s[0]
     return upper
 
-def get_input(number):
+def get_input(number): #get input of name
     lines = []
     for i in range(number):
         line = input()
@@ -23,12 +15,18 @@ def get_input(number):
     return(lines)
 
 def main():
-    number = int(input())
+    while(True): #check if input is integer
+        try:
+            number = int(input())
+            break
+        except ValueError:
+            print("Enter Number")
     name = get_input(number)
     acronym = []
     for n in name:
         acronym.append(get_upper(n)) #append acronym from each word 
     acronym.sort(key = lambda item: (-len(item),item)) #sort by alphabetical order and sort again by length with reverse order
+    print("")
     print("\n".join(acronym))
 
 if (__name__ == "__main__"):
