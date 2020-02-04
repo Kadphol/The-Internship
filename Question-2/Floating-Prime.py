@@ -1,24 +1,18 @@
-"""
-Floating Prime
-Input:  input each decimal number between 1.0 to 10.0 (with number and decimal place not more than 12 digits).
-        Checking if this decimal number are floating prime or not, program will continue until 0.0 is enter.
-Output: TRUE if the number is floating prime, FALSE if it's not.
-"""
-def check_prime(number):
+def check_prime(number): #checking prime number
     if(number > 1):
-        for i in range(2,number):
+        for i in range(2,number):#find if number can modulo with any number
             if((number % i)==0):
-                return False
+                return False #if it can return false
         else:
-            return True
+            return True #if not return true
     else:
         return False
 
 def check_floating(number):
     checking = False
     for i in range (1,4):
-        val = int(number * (10**i))
-        if(check_prime(val)):
+        val = int(number * (10**i)) #shift decimal place
+        if(check_prime(val)):#check prime of number
             checking = True
             break
     return checking
@@ -26,16 +20,16 @@ def check_floating(number):
 def main():
     while(True):
         number = input("Enter Float number: ")
-        if(number == "0.0"):
+        if(number == "0.0"): #terminate program if input is '0.0'
             break
-        try:
+        try: #try if input is number or not
             val = float(number)
-            if(val < 1.0 or val > 10.0):
+            if(val < 1.0 or val > 10.0): #check range of input
                 print("Floating Prime must be between 1.0 to 10.0")
-            elif(len(number.replace(".",""))>12):
+            elif(len(number.replace(".",""))>12): #check length of input
                 print("Number and Decimal over 12 digits")
             else:
-                if(check_floating(val)):
+                if(check_floating(val)): #checking floating prime
                     print("TRUE")
                 else:
                     print("FALSE")
