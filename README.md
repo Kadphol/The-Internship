@@ -19,16 +19,12 @@
  
 [4] Basic Web Crawler.
 ---
-  - **[4.1] Extract Data from Source HTML.**
-    
-    ### Library.
-    ____
-    
+  - ### Library.
     * [axios](https://github.com/axios/axios)
     * [cheerio](https://github.com/cheeriojs/cheerio)
-    
-    ### Script.
-    ____
+  - **[4.1] Extract Data from Source HTML.**
+ 
+ 
     ```zsh
     node Question-4/Web-Crawler.js
     ```
@@ -36,11 +32,6 @@
     
   - **[4.2 - Optional] Extract Data from Source HTML.**
     
-    ### Library.
-    ____
-    
-    ### Script.
-    ____
 
 ***
 Created by Kadphol Lenglerdphol
