@@ -19,7 +19,7 @@ def check_floating(number):
 
 def main():
     while(True):
-        number = input("Enter Float number: ")
+        number = input()
         if(number == "0.0"): #terminate program if input is '0.0'
             break
         try: #try if input is number or not
