@@ -10,9 +10,9 @@ var crawler = function getCompanies(){
         const html = response.data;
         const $ = cheerio.load(html);
 
-        $('div.partner').each(function () {
-            const logo = $(this).find('a > img').attr('src');
-            const text = $(this).find('span').text();
+        $('div.partner').each(function () { //for each div className partner
+            const logo = $(this).find('a > img').attr('src'); //find src attribute in img tag
+            const text = $(this).find('span').text(); //find text in span tag
             link.push({
                 logo,
                 text,
@@ -21,4 +21,4 @@ var crawler = function getCompanies(){
         return link;
     }).catch();
 }
-module.exports = crawler;
+module.exports = crawler; //export crawler module
