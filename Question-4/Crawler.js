@@ -19,6 +19,6 @@ var crawler = function getCompanies(){
             });
         });
         return link;
-    }).catch(console.error);
+    }).catch();
 }
 module.exports = crawler;

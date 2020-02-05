@@ -7,4 +7,7 @@ crawler().then(function(result) { //capture result of promise
     for(var i in result) { //print logo url
         console.log(result[i].logo)
     }
+}).catch(function(error) {
+    console.error(error);
 })
+
