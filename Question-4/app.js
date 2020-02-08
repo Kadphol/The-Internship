@@ -21,6 +21,7 @@ app.get('/companies', (req, res) => {
             }
             company.push(data)
         }
+        console.log({"companies": company});
         res.json({"companies": company}); //response json data from crawler 
     }) 
 })
