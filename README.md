@@ -23,6 +23,10 @@
     * [axios](https://github.com/axios/axios)
     * [cheerio](https://github.com/cheeriojs/cheerio)
     * [Express.js](https://expressjs.com)
+  - ### Install.
+    ```zsh
+    npm install
+    ```
   - **[4.1] Extract Data from Source HTML.**
  
  
